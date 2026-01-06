@@ -1,0 +1,283 @@
+/* -------------------- 
+   CSS RESET & BASE
+-------------------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background: #ffffff;
+    color: #1f2933;
+    line-height: 1.6;
+}
+
+/* --------------------
+   HEADER (GLASS DEPTH)
+-------------------- */
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 50px;
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 100;
+}
+
+header img {
+    height: 56px;
+}
+
+nav a {
+    margin-left: 28px;
+    text-decoration: none;
+    color: #0f4c81;
+    font-weight: 600;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #38bdf8;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* --------------------
+   HERO SECTION (VOLUME)
+-------------------- */
+.hero {
+    position: relative;
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(56, 189, 248, 0.35),
+            transparent 55%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(14, 165, 233, 0.25),
+            transparent 60%
+        ),
+        linear-gradient(
+            135deg,
+            #e0f2fe 0%,
+            #ffffff 75%
+        );
+    padding: 120px 30px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0)
+    );
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    color: #475569;
+}
+
+/* --------------------
+   BUTTON
+-------------------- */
+.btn {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 36px;
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    box-shadow:
+        0 10px 25px rgba(2, 132, 199, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 14px 35px rgba(2, 132, 199, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+/* --------------------
+   CONTENT SECTIONS
+-------------------- */
+.section {
+    position: relative;
+    padding: 90px 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(56, 189, 248, 0.4),
+        transparent
+    );
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #0f4c81;
+}
+
+.section p {
+    font-size: 1.05rem;
+    color: #475569;
+}
+
+/* --------------------
+   SERVICES LIST
+-------------------- */
+.services ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.services li {
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #f8fafc
+        );
+    padding: 22px 24px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.services li:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* --------------------
+   FORMS
+-------------------- */
+input,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: #ffffff;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+/* --------------------
+   BUTTON (FORM)
+-------------------- */
+button {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow:
+        0 10px 25px rgba(2, 132, 199, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+button:hover {
+    box-shadow:
+        0 14px 35px rgba(2, 132, 199, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+/* --------------------
+   FOOTER
+-------------------- */
+footer {
+    text-align: center;
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc,
+            #ffffff
+        );
+    padding: 30px 20px;
+    font-size: 0.85rem;
+    color: #64748b;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* --------------------
+   RESPONSIVE
+-------------------- */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 25px;
+    }
+
+    nav a {
+        margin-left: 16px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .section {
+        padding: 70px 25px;
+    }
+}
